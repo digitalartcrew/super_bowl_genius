@@ -1,0 +1,34 @@
+<ion-view view-title="Super Bowl Genie">
+<ion-nav-buttons side="right" ng-show="false">
+<button ng-show="isLoggedIn()" class="button button-icon button-clear"> Hello, {{displayName}}</button>
+</ion-nav-buttons>
+<div class="bar bar-subheader">
+  <h2 class="title">Select one of the links below to learn more about the Super Bowl!</h2>
+</div>
+<ion-content class="padding has-subheader">
+<p>The Super Bowl Mashup app allows users to search for places, answer trivia, chat and learn rules!</p>
+<ion-list>
+<ion-item href="#/app/restaurants">Restaurants</ion-item>
+<ion-item href="#/app/teams">Teams</ion-item>
+<ion-item href="#/app/trivia">Trivia</ion-item>
+<ion-item href="#/app/chat">Chat</ion-item>
+<ion-item href="#/app/events">Events</ion-item>
+<ion-item href="#/app/celebrities">Celebrities</ion-item>
+<ion-item href="#/app/rules">NFL Rules</ion-item>
+<ion-item href="#/app/weather">Weather</ion-item>
+</ion-list>
+<div class="button-bar">
+  <a href="#/app/button1" class="button">Button #1</a>
+  <a href="#/app/button2" class="button">Button #2</a>
+  <a href="#/app/button3" class="button">Button #3</a>
+  <a href="#/app/button4" class="button">Button #4</a>
+</div>
+</ion-content>
+</ion-view>
+<ion-footer-bar class="bar-positive">
+<div class="button-bar">
+  <button class="icon ion-social-twitter button button-clear"></button>
+  <button class="icon ion-social-facebook button button-clear"></button>
+  <button class="icon ion-social-youtube button button-clear"></button>
+</div>
+</ion-footer-bar>

@@ -1,9 +1,11 @@
-MMA Hustler
+Super Bowl Genius 
 
-MMA Hustler is a mobile web application designed using the ionic framework.  Users are able to accomplish the following:
+Super Bowl Genius is a mashup that allows users to:
 
--Search fighter db
--Search events
--Search for training facilities
--Shop for new gear
-# super_bowl_genius
+Search for places to eat using the Yelp API
+Search Team Info
+Answer Super Trivia
+Chat with Special
+Search for Super Bowl Parties & Events 
+Search Weather using IBM Watson API
+
