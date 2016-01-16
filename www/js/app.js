@@ -32,78 +32,56 @@ var app = angular.module('starter', ['ionic','ionic.service.core', 'starter.cont
     controller: 'AppCtrl'
   })
 
-
-  .state('app.gyms', {
-    url: '/gyms',
+     .state('app.home', {
+    url: '/home',
     views: {
       'menuContent': {
         templateUrl: 'templates/home.html',
-        controller: 'GymsCtrl'
+        controller: 'HomeCtrl'
       }
     }
   })
 
-    .state('app.mma', {
-    url: '/mma',
+  .state('app.restaurants', {
+    url: '/restaurants',
     views: {
       'menuContent': {
-        templateUrl: 'templates/mma.html',
-        controller: 'MmaCtrl'
+        templateUrl: 'templates/restaurants.html',
+        controller: 'RestaurantsCtrl'
       }
     }
   })
 
-  .state('app.fitness', {
-    url: '/fitness',
+   .state('app.team', {
+    url: '/teams',
     views: {
       'menuContent': {
-        templateUrl: 'templates/fitness.html',
-        controller: 'FitnessCtrl'
+        templateUrl: 'templates/teams.html',
+        controller: 'TeamsCtrl'
       }
     }
   })
 
-  .state('app.boxing', {
-    url: '/boxing',
+    .state('app.trivia', {
+    url: '/trivia',
     views: {
       'menuContent': {
-        templateUrl: 'templates/boxing.html',
-        controller: 'BoxingCtrl'
+        templateUrl: 'templates/trivia.html',
+        controller: 'triviaCtrl'
       }
     }
   })
 
-  .state('app.bjj', {
-    url: '/bjj',
+       .state('app.chat', {
+    url: '/chat',
     views: {
       'menuContent': {
-        templateUrl: 'templates/bjj.html',
-        controller: 'BjjCtrl'
+        templateUrl: 'templates/chat.html',
+        controller: 'ChatCtrl'
       }
     }
   })
-
-  .state('app.wrestling', {
-    url: '/wrestling',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/wrestling.html',
-        controller: 'WrestlingCtrl'
-      }
-    }
-  })
-
-  .state('app.yoga', {
-    url: '/yoga',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/yoga.html',
-        controller: 'YogaCtrl'
-      }
-    }
-  })
-
-  .state('app.events', {
+            .state('app.events', {
     url: '/events',
     views: {
       'menuContent': {
@@ -113,165 +91,37 @@ var app = angular.module('starter', ['ionic','ionic.service.core', 'starter.cont
     }
   })
 
-  .state('app.singleevent', {
-    url: '/events/:eventId',
+          .state('app.celebrities', {
+    url: '/celebrities',
     views: {
       'menuContent': {
-        templateUrl: 'templates/event.html',
-        controller: 'EventCtrl'
+        templateUrl: 'templates/celebrities.html',
+        controller: 'CelebrititesCtrl'
       }
     }
   })
 
-  .state('app.fighters', {
-    url: '/fighters',
+             .state('app.rules', {
+    url: '/rules',
     views: {
       'menuContent': {
-        templateUrl: 'templates/fighters.html',
-        controller: 'FightersCtrl'
+        templateUrl: 'templates/rules.html',
+        controller: 'RulesCtrl'
       }
     }
   })
 
-  .state('app.singlefighter', {
-    url: '/fighters/:fighterId',
+                .state('app.weather', {
+    url: '/weather',
     views: {
       'menuContent': {
-        templateUrl: 'templates/fighter.html',
-        controller: 'FighterCtrl'
-      }
-    }
-  })
-
-
-  .state('app.news', {
-    url: '/news',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/news.html',
-        controller: 'NewsCtrl'
-      }
-    }
-  })
-
-  .state('app.story', {
-    url: '/news/:storyId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/story.html',
-        controller: 'FighterCtrl'
-      }
-    }
-  })
-
-  .state('app.shop', {
-    url: '/shop',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/shop.html',
-        controller: 'ShopCtrl'
-      }
-    }
-  })
-
-  .state('app.account', {
-    url: '/account',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/account.html',
-        controller: 'AccountCtrl'
-      }
-    }
-  })
-
-  .state('app.progress', {
-    url: '/progress',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/progress.html',
-        controller: 'ProgressCtrl'
-      }
-    }
-  })
-  .state('app.goals', {
-    url: '/goals',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/goals.html',
-        controller: 'GoalsCtrl'
-      }
-    }
-  })
-  .state('app.films', {
-    url: '/films',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/films.html',
-        controller: 'FilmsCtrl'
-      }
-    }
-  })
-  .state('app.blog', {
-    url: '/blog',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/blog.html',
-        controller: 'BlogCtrl'
-      }
-    }
-  })
-  .state('app.friends', {
-    url: '/friends',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/friends.html',
-        controller: 'FriendsCtrl'
-      }
-    }
-  })
-
-  .state('app.singlefriend', {
-    url: '/friends/:friendId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/friend.html',
-        controller: 'FriendCtrl'
-      }
-    }
-  })
-
-  .state('app.instructions', {
-    url: '/instructions',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/instructions.html',
-        controller: 'InstructionsCtrl'
-      }
-    }
-  })
-
-  .state('app.media', {
-    url: '/media',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/media.html',
-        controller: 'MediaCtrl'
-      }
-    }
-  })
-
-  .state('app.signup', {
-    url: '/signup',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/signup.html',
-        controller: 'AppCtrl'
+        templateUrl: 'templates/weather.html',
+        controller: 'WeatherCtrl'
       }
     }
   })
   ;
 
-
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/gyms');
+  $urlRouterProvider.otherwise('/app/home');
 });
