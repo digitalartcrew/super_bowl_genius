@@ -1,4 +1,10 @@
 {
-  "name": "mmaHustler",
-  "app_id": "a2b7ad24"
+  "name": "superBowlGenius",
+  "app_id": "",
+  "proxies": [
+    {
+    "path": "/api",
+      "proxyUrl": "http://localhost:3001/api/endpoint"
+    }
+  ]
 }

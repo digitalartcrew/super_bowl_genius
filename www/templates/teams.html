@@ -1,10 +1,62 @@
 <ion-view view-title="Teams">
-<ion-content>
-<h1>Teams</h1>
-{{teamResults}}
-
-</ion-content>
+  <ion-content>
+    <ion-list>
+      <ion-item>
+      <center>
+      <img width="50px" height="50px" src="{{greenbayResults.team.logo}}">
+        <p>{{greenbayResults.team.displayName}}</p>
+         <p>Ranking: {{greenbayResults.team.standingSummary}}</p>
+         <p>Season Record: {{greenbayResults.team.recordSummary}}</p>
+        </center>
+      </ion-item>
+       <ion-item>
+       <center>
+       <img width="50px" height="50px" src="{{carolinaResults.team.logo}}">
+        <p>{{carolinaResults.team.displayName}}</p>
+        <p>Ranking: {{carolinaResults.team.standingSummary}}</p>
+        <p>Season Record: {{carolinaResults.team.recordSummary}}</p>
+        </center>
+      </ion-item>
+       <ion-item>
+       <center>
+       <img width="50px" height="50px" src="{{seattleResults.team.logo}}">
+        <p>{{seattleResults.team.displayName}}</p>
+        <p>Ranking: {{seattleResults.team.standingSummary}}</p>
+        <p>Season Record: {{seattleResults.team.recordSummary}}</p>
+        </center>
+      </ion-item>
+       <ion-item>
+       <center>
+       <img width="50px" height="50px" src="{{arizonaResults.team.logo}}">
+        <p>{{arizonaResults.team.displayName}}</p>
+        <p>Ranking: {{arizonaResults.team.standingSummary}}</p>
+        <p>Season Record: {{arizonaResults.team.recordSummary}}</p>
+        </center>
+      </ion-item>
+       <ion-item>
+       <center>
+       <img width="50px" height="50px" src="{{denverResults.team.logo}}">
+        <p>{{denverResults.team.displayName}}</p>
+        <p>Ranking: {{denverResults.team.standingSummary}}</p>
+        <p>Season Record: {{denverResults.team.recordSummary}}</p>
+        </center>
+      </ion-item>
+       <ion-item>
+       <center>
+       <img width="50px" height="50px" src="{{kansasResults.team.logo}}">
+        <p>{{kansasResults.team.displayName}}</p>
+        <p>Ranking: {{kansasResults.team.standingSummary}}</p>
+        <p>Season Record: {{kansasResults.team.recordSummary}}</p>
+        </center>
+      </ion-item>
+       <ion-item>
+       <center>
+       <img width="50px" height="50px" src="{{newenglandResults.team.logo}}">
+        <p>{{newenglandResults.team.displayName}}</p>
+        <p>Ranking: {{newenglandResults.team.standingSummary}}</p>
+        <p>Season Record: {{newenglandResults.team.recordSummary}}</p>
+      </ion-item>
+      </center>
+    </ion-list>
+  </ion-content>
 </ion-view>
-<ion-footer-bar class="bar-dark">
-</ion-footer-bar>
-

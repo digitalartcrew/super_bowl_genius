@@ -154,8 +154,9 @@ angular.module('starter.controllers',[])
 
 })
 
-.controller('RestaurantCtrl', function($scope, $stateParams,$http,superbowlService) {
+.controller('RestaurantsCtrl', function($scope,$stateParams,$http,superbowlService) {
    superbowlService.restaurants().then(function(res){
+    console.log(res.data);
     $scope.restaurantResults = res.data;
   });
 })
@@ -186,11 +187,44 @@ angular.module('starter.controllers',[])
 })
 
 .controller('TeamsCtrl', function($scope,$stateParams,$http,superbowlService) {
-   console.log("Almost!");
-  superbowlService.teams(function(res){
-    console.log("Teams Work!");
-    $scope.teamResults = res.data;
+   
+  superbowlService.greenbay().then(function(res){
+    var greenbayData = JSON.parse(res.data);
+    $scope.greenbayResults = greenbayData;
+    console.log(greenbayData);
   });
+  superbowlService.carolina().then(function(res){
+    var carolinaData = JSON.parse(res.data);
+    $scope.carolinaResults = carolinaData;
+     console.log(carolinaData);
+  });
+  superbowlService.seattle().then(function(res){
+    var seattleData = JSON.parse(res.data);
+    $scope.seattleResults = seattleData;
+     console.log(seattleData);
+  });
+  superbowlService.arizona().then(function(res){
+    var arizonaData = JSON.parse(res.data);
+    $scope.arizonaResults = arizonaData;
+     console.log(arizonaData);
+  });
+  superbowlService.denver().then(function(res){
+    var denverData = JSON.parse(res.data);
+    $scope.denverResults = denverData;
+     console.log(denverData);
+  });
+  superbowlService.kansas().then(function(res){
+    var kansasData = JSON.parse(res.data);
+    $scope.kansasResults = kansasData;
+     console.log(kansasData);
+  });
+  superbowlService.newengland().then(function(res){
+    var newenglandData = JSON.parse(res.data);
+    $scope.newenglandResults = newenglandData;
+     console.log(newenglandData);
+  });
+
+
 })
 
 .controller('ChatCtrl', function($scope) {

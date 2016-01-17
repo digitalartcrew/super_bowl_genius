@@ -24,7 +24,8 @@ var yelp = new Yelp({
 	token_secret: process.env.TOKEN_SECRET,
 });
 
-var espn = 'http://espn.go.com/nfl/team/_/name/ne/?xhr=1';
+
+var espn = 'http://espn.go.com/nfl/team/_/name/';
 var eventful = 'http://api.eventful.com/json/events/search?app_key=5RSMsLpdHrrX55Pz&keywords=super+bowl&location=san+jose+metro+area';
 
 app.get('/restaurants', function(req,res){
@@ -64,12 +65,62 @@ app.get('/rules', function(req,res){
 });
 
 app.get('/weather', function(req,res){
-	request(url+'weather', function(error, response, body) {
+	request('#', function(error, response, body) {
 		if (error || response.statusCode !== 200) return res.status(404).json({error: error});
 		res.status(200).json(body);
 	});
 });
 
+//NFL Teams
+
+app.get('/greenbay', function(req,res){
+	request(espn+'gb/?xhr=1', function(error, response, body) {
+		if (error || response.statusCode !== 200) return res.status(404).json({error: error});
+		res.status(200).json(body);
+	});
+});
+
+app.get('/carolina', function(req,res){
+	request(espn+'car/?xhr=1', function(error, response, body) {
+		if (error || response.statusCode !== 200) return res.status(404).json({error: error});
+		res.status(200).json(body);
+	});
+});
+
+app.get('/seattle', function(req,res){
+	request(espn+'sea/?xhr=1', function(error, response, body) {
+		if (error || response.statusCode !== 200) return res.status(404).json({error: error});
+		res.status(200).json(body);
+	});
+});
+
+app.get('/arizona', function(req,res){
+	request(espn+'ari/?xhr=1', function(error, response, body) {
+		if (error || response.statusCode !== 200) return res.status(404).json({error: error});
+		res.status(200).json(body);
+	});
+});
+
+app.get('/denver', function(req,res){
+	request(espn+'den/?xhr=1', function(error, response, body) {
+		if (error || response.statusCode !== 200) return res.status(404).json({error: error});
+		res.status(200).json(body);
+	});
+});
+
+app.get('/kansas', function(req,res){
+	request(espn+'kc/?xhr=1', function(error, response, body) {
+		if (error || response.statusCode !== 200) return res.status(404).json({error: error});
+		res.status(200).json(body);
+	});
+});
+
+app.get('/newengland', function(req,res){
+	request(espn+'ne/?xhr=1', function(error, response, body) {
+		if (error || response.statusCode !== 200) return res.status(404).json({error: error});
+		res.status(200).json(body);
+	});
+});
 
 
 app.listen(3001,function(req,res){

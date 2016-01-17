@@ -6,6 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 var app = angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers','firebase','ngCordova'])
 
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -47,12 +48,12 @@ var app = angular.module('starter', ['ionic','ionic.service.core', 'starter.cont
     views: {
       'menuContent': {
         templateUrl: 'templates/restaurants.html',
-        controller: 'RestaurantCtrl'
+        controller: 'RestaurantsCtrl'
       }
     }
   })
 
-   .state('app.team', {
+   .state('app.teams', {
     url: '/teams',
     views: {
       'menuContent': {
