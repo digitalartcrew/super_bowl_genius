@@ -65,7 +65,7 @@ app.get('/celebrities', function(req,res){
 });
 
 app.get('/rules', function(req,res){
-	request(url+'rules', function(error, response, body) {
+	request('https://en.wikipedia.org/w/api.php?format=json&action=query&titles=Glossary_of_American_football&prop=revisions&rvprop=content&callback=?', function(error, response, body) {
 	  if (error || response.statusCode !== 200) return res.status(404).json({error: error});
 	  res.status(200).json(body);
 	});
