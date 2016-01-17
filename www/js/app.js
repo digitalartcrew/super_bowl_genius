@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-var app = angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers','firebase','ngCordova','youtube-embed'])
+var app = angular.module('starter', ['ionic','ionic.service.core','starter.controllers','firebase','ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -47,17 +47,17 @@ var app = angular.module('starter', ['ionic','ionic.service.core', 'starter.cont
     views: {
       'menuContent': {
         templateUrl: 'templates/restaurants.html',
-        controller: 'RestaurantsCtrl'
+        controller: 'RestaurantCtrl'
       }
     }
   })
 
-   .state('app.team', {
+   .state('app.teams', {
     url: '/teams',
     views: {
       'menuContent': {
         templateUrl: 'templates/teams.html',
-        controller: 'TeamsCtrl'
+        controller: 'TeamCtrl'
       }
     }
   })
@@ -90,17 +90,7 @@ var app = angular.module('starter', ['ionic','ionic.service.core', 'starter.cont
       }
     }
   })
-
-          .state('app.celebrities', {
-    url: '/celebrities',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/celebrities.html',
-        controller: 'CelebrititesCtrl'
-      }
-    }
-  })
-
+            
              .state('app.rules', {
     url: '/rules',
     views: {

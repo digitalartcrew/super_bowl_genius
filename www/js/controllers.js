@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['youtube-embed'])
+angular.module('starter.controllers',[])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout,$state,$http) {
   $scope.data = {};
@@ -136,10 +136,8 @@ angular.module('starter.controllers', ['youtube-embed'])
           $scope.loggedIn = true;
 
         }
-      });
-      
-    }
-    
+      }); 
+    } 
   };
 
 
@@ -151,12 +149,10 @@ angular.module('starter.controllers', ['youtube-embed'])
   };
 })
 
-.controller('RestaurantsCtrl', function($scope,superbowlService) {
+.controller('RestaurantCtrl', function($scope, $stateParams,$http,superbowlService) {
    superbowlService.restaurants().then(function(res){
-    console.log(res);
-  $scope.restaurantResults = res.data;
-});
-  
+    $scope.restaurantResults = res.data;
+  });
 })
 
 .controller('TriviaCtrl', function($scope) {
@@ -184,16 +180,23 @@ angular.module('starter.controllers', ['youtube-embed'])
   
 })
 
-.controller('TeamsCtrl', function($scope) {
+.controller('TeamCtrl', function($scope,$stateParams,$http,superbowlService) {
+   console.log("Almost!");
+  superbowlService.teams(function(res){
+    console.log("Teams Work!");
+    $scope.teamResults = res.data;
+  });
 })
 
 .controller('ChatCtrl', function($scope) {
 })
 
-.controller('EventsCtrl', function($scope) {
-})
+.controller('EventsCtrl', function($scope, $stateParams,$http,superbowlService) {
+   superbowlService.events().then(function(res){
+    $scope.eventResults = res.data;
+    
+  });
 
-.controller('CelebrititesCtrl', function($scope) {
 })
 
 .controller('RulesCtrl', function($scope) {
