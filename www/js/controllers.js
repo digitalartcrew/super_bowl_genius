@@ -1,7 +1,8 @@
 angular.module('starter.controllers',[])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout,$state,$http) {
-  $scope.data = {};
+  
+   $scope.data = {};
   var authData;
 
 
@@ -129,6 +130,7 @@ angular.module('starter.controllers',[])
         if (error) {
           console.log("Login Failed!", error);
         } else {
+          console.log(authData);
           fbData.push(authData);
           $scope.displayName = authData.facebook.displayName;
           $scope.profileImageURL = authData.facebook.profileImageURL;
@@ -136,8 +138,10 @@ angular.module('starter.controllers',[])
           $scope.loggedIn = true;
 
         }
-      }); 
-    } 
+      });
+      
+    }
+    
   };
 
 
@@ -147,6 +151,7 @@ angular.module('starter.controllers',[])
     console.log("Should be loggin out!");
     return $state.go('app.gyms');
   };
+
 })
 
 .controller('RestaurantCtrl', function($scope, $stateParams,$http,superbowlService) {
