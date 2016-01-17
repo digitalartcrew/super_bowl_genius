@@ -47,7 +47,7 @@ var app = angular.module('starter', ['ionic','ionic.service.core', 'starter.cont
     views: {
       'menuContent': {
         templateUrl: 'templates/restaurants.html',
-        controller: 'RestaurantsCtrl'
+        controller: 'RestaurantCtrl'
       }
     }
   })

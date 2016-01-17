@@ -185,7 +185,7 @@ angular.module('starter.controllers',[])
   
 })
 
-.controller('TeamCtrl', function($scope,$stateParams,$http,superbowlService) {
+.controller('TeamsCtrl', function($scope,$stateParams,$http,superbowlService) {
    console.log("Almost!");
   superbowlService.teams(function(res){
     console.log("Teams Work!");
@@ -197,9 +197,16 @@ angular.module('starter.controllers',[])
 })
 
 .controller('EventsCtrl', function($scope, $stateParams,$http,superbowlService) {
+
+
    superbowlService.events().then(function(res){
-    $scope.eventResults = res.data;
+   
+    var eventData = JSON.parse(res.data).events.event;
+    $scope.events = eventData;
     
+   
+
+    console.log($scope.events);
   });
 
 })

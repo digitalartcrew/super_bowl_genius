@@ -1,6 +1,15 @@
 <ion-view view-title="Events">
   <ion-content>
-    <h1>events</h1>
-    {{eventResults}}
+    <ion-list>
+      <ion-item ng-repeat="event in events">
+      <div>
+      <img src="{{event.image.url}}">
+        <p>{{event.venue_name}}</p>
+        <p>{{event.venue_address}}</p>
+        <p>{{event.city_name}}</p>
+        <p>{{event.description}}</p>
+        </div>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
