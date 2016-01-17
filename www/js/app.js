@@ -4,6 +4,12 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
+angular.module('underscore', [])
+.factory('_', function() {
+  return window._; // assumes underscore has already been loaded on the page
+});
+
+
 var app = angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers','firebase','ngCordova','youtube-embed'])
 
 .run(function($ionicPlatform) {
@@ -81,6 +87,16 @@ var app = angular.module('starter', ['ionic','ionic.service.core', 'starter.cont
       }
     }
   })
+        .state('app.chat_list', {
+    url: '/chat_list',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/chat_list.html',
+        controller: 'ChatCtrl'
+      }
+    }
+  })
+
             .state('app.events', {
     url: '/events',
     views: {

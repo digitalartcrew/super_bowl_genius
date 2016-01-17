@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['youtube-embed'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout,$state,$http) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout,$state,$http, ChatService) {
   $scope.data = {};
   var authData;
 
@@ -86,12 +86,21 @@ angular.module('starter.controllers', ['youtube-embed'])
         console.log("Authenticated successfully with payload:");
         $scope.isLoggedIn = true;
         $scope.isLoggedIn();
+        //
+        //Demetris - START
+        //
+        //Initialize user's private channel
+        $rootScope.user_channel = authData.uid;
+        $rootScope.user_name = Math.ceil(100*Math.random()); //we need the name of the user here
+        ChatService.connect();
+        //
+        //Demetris - END
+        //
         return $state.go('app.gyms');
-        
       }
     });
 
-     // Simulate a login delay. Remove this and replace with your login
+    // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
     $timeout(function() {
       $scope.closeLogin();
@@ -186,10 +195,73 @@ angular.module('starter.controllers', ['youtube-embed'])
 
 .controller('TeamsCtrl', function($scope) {
 })
-
-.controller('ChatCtrl', function($scope) {
+//
+//Demetris - START
+//
+.controller('ChatCtrl', function($scope, $rootScope, $state, $http) {
+  $scope.disconnect = function() {
+    $rootScope.messenger.disconnect();
+    $rootScope.messenger.emit('userLeave',$rootScope.user_channel);
+    $rootScope.messenger_connected = false;
+  };
+  $scope.loadChannels = function () {
+    $http({
+      url: chat_server + 'messenger/loadChannels',
+      method: "POST",
+    })
+    .then(function(r) {
+      $rootScope.channels = r.data;
+      $rootScope.offset = 0;
+    });
+  };
+  $scope.openChannel = function(channel) {
+    $rootScope.channel = channel;
+    $state.go('app.chat_list');
+  }
+  $scope.loadChannel = function (mode) {
+    if (mode == 0)
+      $rootScope.offset = 0;
+    $http({
+      url: chat_server + 'messenger/loadChannel',
+      method: "POST",
+      data: {
+        mode: mode,
+        channel: $rootScope.channel,
+        offset: $rootScope.offset,
+      }
+    })
+    .then(function(r) {
+      if (r.length) {
+        if (mode == 0 || _.isUndefined($rootScope.messages))
+          $rootScope.messages = r.data;
+        else
+          $rootScope.messages = r.data.concat($rootScope.messages);
+        $rootScope.offset = $rootScope.offset + r.data.length;
+        $scope.fetch_more = r.length>0;
+        
+        $scope.$broadcast('scroll.refreshComplete');
+        $scope.$broadcast('scroll.infiniteScrollComplete');
+      }
+    });
+  };
+  $scope.post = function() {
+    console.log($scope.message);
+    console.log($rootScope.channel);
+    console.log($rootScope.user_name);
+    $http({
+      url: chat_server + 'messenger/post',
+      method: "POST",
+      data: {
+        message: $scope.message,
+        channel: $rootScope.channel,
+        sender: $rootScope.user_name,
+      }
+    });
+  };
 })
-
+//
+//Demetris - END
+//
 .controller('EventsCtrl', function($scope) {
 })
 

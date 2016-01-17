@@ -1,6 +1,10 @@
 <ion-view view-title="CHAT ROOM">
   <ion-content>
-    <h1>chat</h1>
-    {{chatResults}}
+    <div class="list" ng-init="loadChannels()">
+    	<div class="item item-avatar" ng-repeat="ch in channels" ng-click="openChannel(ch.alias)">
+    		<img ng-src="{{ch.avatar}}">
+    		<h2>{{ch.topic}}</h2>
+    	</div>
+    </div>
   </ion-content>
 </ion-view>
