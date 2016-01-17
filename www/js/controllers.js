@@ -190,7 +190,10 @@ angular.module('starter.controllers', ['youtube-embed'])
 .controller('ChatCtrl', function($scope) {
 })
 
-.controller('EventsCtrl', function($scope) {
+.controller('EventsCtrl', function($scope, superbowlService) {
+    superbowlService.events().then(function(res){
+    console.log(res);
+
 })
 
 .controller('CelebrititesCtrl', function($scope) {

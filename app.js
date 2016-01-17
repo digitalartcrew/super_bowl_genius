@@ -20,6 +20,7 @@ var yelp = new Yelp({
 var espn = 'http://espn.go.com/nfl/team/_/name/ne/?xhr=1';
 var eventful = 'http://api.eventful.com/rest/events/search?app_key=5RSMsLpdHrrX55Pz&keywords=super+bowl&location=san+jose+metro+area';
 
+var eventful = 'http://api.eventful.com/rest/events/search?app_key=5RSMsLpdHrrX55Pz&keywords=super+bowl&location=san+jose+metro+area';
 
 app.use(morgan('combined'));
 app.use(express.static(__dirname + '/public'));
