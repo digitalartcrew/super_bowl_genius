@@ -151,7 +151,11 @@ angular.module('starter.controllers', ['youtube-embed'])
   };
 })
 
-.controller('RestaurantsCtrl', function($scope) {
+.controller('RestaurantsCtrl', function($scope,supebowlService) {
+   supebowlService.restaurants().then(function(res){
+    console.log(res);
+  $scope.restaurantResults = res.data;
+});
   
 })
 
