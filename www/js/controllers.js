@@ -223,8 +223,6 @@ angular.module('starter.controllers',[])
     $scope.newenglandResults = newenglandData;
      console.log(newenglandData);
   });
-
-
 })
 
 .controller('ChatCtrl', function($scope) {

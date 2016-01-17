@@ -10,6 +10,7 @@ var mongoose = require('mongoose'),
 	morgan = require('morgan'),
 	Yelp = require('yelp');
 
+var eventful = 'http://api.eventful.com/rest/events/search?app_key=5RSMsLpdHrrX55Pz&keywords=super+bowl&location=san+jose+metro+area';
 
 app.use(morgan('combined'));
 app.use(express.static(__dirname + '/public'));
