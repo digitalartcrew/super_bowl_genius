@@ -1,0 +1,5 @@
+{ "host"     : "localhost",
+  "user"     : "cemup_hackathon",
+  "password" : "123456789",
+  "database" : "cemup_hackathon"
+}
