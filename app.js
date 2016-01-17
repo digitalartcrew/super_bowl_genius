@@ -17,6 +17,8 @@ var yelp = new Yelp({
   token_secret: process.env.TOKEN_SECRET,
 });
 
+var espn = 'http://espn.go.com/nfl/team/_/name/ne/?xhr=1';
+
 
 app.use(morgan('combined'));
 app.use(express.static(__dirname + '/public'));
@@ -34,8 +36,8 @@ app.get('/restaurants', function(req,res){
 	});
 });
 
-app.get('/team', function(req,res){
-	request(url+'team', function(error, response, body) {
+app.get('/teams', function(req,res){
+	request(espn, function(error, response, body) {
 	  if (error || response.statusCode !== 200) return res.status(404).json({error: error});
 	  res.status(200).json(body);
 	});
@@ -75,8 +77,6 @@ app.get('/weather', function(req,res){
 	  res.status(200).json(body);
 	});
 });
-
-
 
 
 

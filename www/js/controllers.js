@@ -161,13 +161,26 @@ angular.module('starter.controllers', ['youtube-embed'])
 
 .controller('TriviaCtrl', function($scope) {
   $scope.trivia = [
-    { question: 'What is this?', answer: 1 },
-    { question: 'Where is this', answer: 2 },
-    { question: 'Who is this', answer: 3 },
-    { question: 'When is this', answer: 4 },
-    { question: 'What is that', answer: 5 },
-    { question: 'What is going on', answer: 6 }
+    {question: "What is the name of the Super Bowl trophy?", answer: "The Vince Lombardi Trophy", category: "Super Bowl"},
+  {question: "Where did Super Bowl 49 take place?", answer: "Glendale, AZ", category: "Super Bowl"},
+  {question: "Which NFL quarterback is known for his glorious neckbeard?", answer: "Andrew Luck", category: "Players"},
+  {question: "Which was the first team to play in a domed stadium?", answer: "Oilers", category: "Teams"},
+  {question: "What team performed the Super Bowl Shuffle in 1985?", answer: "Chicago Bears", category: "Teams"},
+  {question: "What team was at the center of 2015's Deflategate controversy?", answer: "New England Patriots", category: "Teams"},
+  {question: "What city did the Indianapolis Colts move from in 1984?", answer: "Baltimore, MD", category: "Teams"},
+  {question: "Who is the only player in the Pro Football Hall of Fame with more than one Super Bowl interception?", answer: "Mel Blount", category: "Super Bowl"},
+  {question: "Who holds the record for most completions in a Super Bowl?", answer: "Peyton Manning", category: "Super Bowl"},
+  {question: "In which Super Bowl did John Elway play without scoring a touchdown?", answer: "Super Bowl XXII", category: "Super Bowl"},
+  {question: "Which NFL player was convicted of dogfighting?", answer: "Michael Vick", category: "Players"},
+  {question: "How many players are allowed on the field at a time for each team?", answer: "11", category: "Rules"},
+  {question: "Which NFL team has produced the most regular season MVPs?", answer: "Colts", category: "Teams"},
+  {question: "What is the only team that hasn't played in a conference championship since 1988?", answer: "Houston Texans", category: "Teams"},
+  {question: "Which coach has the most lifetime coaching victories?", answer: "Don Shula", category: "Coaches"},
+  {question: "Who was the oldest Hall of Fame inductee?", answer: "Ed Sabol", category: "Players"},
+  {question: "Who holds the record for most rushing yards in a single game?", answer: "Adrian Peterson", category: "Players"},
+  {question: "Who is the only left-handed quarterback in the Pro Football Hall of Fame?", answer: "Steve Young", category: "Players"}
   ];
+
   
 })
 

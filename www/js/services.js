@@ -4,5 +4,4 @@ app.factory('supebowlService', function($http, $q) {
 			return $http.get('http://localhost:3001/restaurants');
 		}
 	};
-
 });
