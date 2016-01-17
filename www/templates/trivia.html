@@ -1,9 +1,9 @@
 <ion-view view-title="Trivia">
-  <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="t in trivia" href="#/app/trivia/{{trivia.id}}">
+  <ion-content class="background">
+   
+      <div class="card front" ng-repeat="t in trivia" href="#/app/trivia/{{trivia.id}}">
         {{t.question}}
-      </ion-item>
-    </ion-list>
+      </div>
+    
   </ion-content>
 </ion-view>
