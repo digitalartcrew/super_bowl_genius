@@ -18,6 +18,7 @@ var yelp = new Yelp({
 });
 
 var espn = 'http://espn.go.com/nfl/team/_/name/ne/?xhr=1';
+var eventful = 'http://api.eventful.com/rest/events/search?app_key=5RSMsLpdHrrX55Pz&keywords=super+bowl&location=san+jose+metro+area';
 
 
 app.use(morgan('combined'));
@@ -51,7 +52,7 @@ app.get('/trivia', function(req,res){
 });
 
 app.get('/events', function(req,res){
-	request(url+'events', function(error, response, body) {
+	request(eventful, function(error, response, body) {
 	  if (error || response.statusCode !== 200) return res.status(404).json({error: error});
 	  res.status(200).json(body);
 	});
