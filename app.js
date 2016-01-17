@@ -7,7 +7,15 @@ cors = require('cors'),
 app = express(),
 bodyParser = require("body-parser"),
 methodOverride = require('method-override'),
-morgan = require('morgan');
+morgan = require('morgan'),
+Yelp = require('yelp');
+
+var yelp = new Yelp({
+  consumer_key: 'Iuoy6KrHKBu5rk6lH9XmMw',
+  consumer_secret: 'fwN5297z2Cuzn-V40GytBXh5c0w',
+  token: 'BAQiwhrIzRJedyuXZN2SO80F2HtM5dXo',
+  token_secret: 'a18oajlWieOxRW8qnKzBZX63wJs',
+});
 
 
 app.use(morgan('combined'));
@@ -17,8 +25,9 @@ app.use(methodOverride('_method'));
 app.use(cors());
 
 
+
 app.get('/restaurants', function(req,res){
-	request(url+'restaurants', function(error, response, body) {
+	request(yelp, function(error, response, body) {
 	  if (error || response.statusCode !== 200) return res.status(404).json({error: error});
 	  res.status(200).json(body);
 	});

@@ -67,7 +67,7 @@ var app = angular.module('starter', ['ionic','ionic.service.core', 'starter.cont
     views: {
       'menuContent': {
         templateUrl: 'templates/trivia.html',
-        controller: 'triviaCtrl'
+        controller: 'TriviaCtrl'
       }
     }
   })

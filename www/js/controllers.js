@@ -152,6 +152,19 @@ angular.module('starter.controllers', ['youtube-embed'])
 })
 
 .controller('RestaurantsCtrl', function($scope) {
+  
+})
+
+.controller('TriviaCtrl', function($scope) {
+  $scope.trivia = [
+    { question: 'What is this?', answer: 1 },
+    { question: 'Where is this', answer: 2 },
+    { question: 'Who is this', answer: 3 },
+    { question: 'When is this', answer: 4 },
+    { question: 'What is that', answer: 5 },
+    { question: 'What is going on', answer: 6 }
+  ];
+  
 })
 
 .controller('TeamsCtrl', function($scope) {
