@@ -3,18 +3,20 @@
 <button ng-show="isLoggedIn()" class="button button-icon button-clear"> Hello, {{displayName}}</button>
 </ion-nav-buttons>
 <div class="bar bar-subheader">
-  <h2 class="title">Select one of the links below to learn more about the Super Bowl!</h2>
+  <h1 class="title" style="text-overflow: none">Welcome to San Jose, home of Super Bowl 50!</h1>
 </div>
 <ion-content class="padding has-subheader">
-<p>The Super Bowl Mashup app allows users to search for places, answer trivia, chat and learn rules!</p>
+<p>Let your smartphone be your playbook with this virtual visitor's kiosk for your Silicon Valley Super Bowl experience. Explore local dining options and Super Bowl events, brush up on your football knowledge, or chat with other fans.</p>
 <ion-list>
-<ion-item href="#/app/teams">Teams</ion-item>
-<ion-item href="#/app/trivia">Trivia</ion-item>
-<ion-item href="#/app/events">Events</ion-item>
-<ion-item href="#/app/rules">NFL Rules</ion-item>
-<ion-item href="#/app/chat">Chat</ion-item>
-<ion-item href="#/app/weather">Weather</ion-item>
-<ion-item href="#/app/restaurants">Restaurants</ion-item>
+<ion-item id="gold" href="#/app/weather">Check Local Weather</ion-item>
+<ion-item id="silver" href="#/app/restaurants">Tackle Your Hunger</ion-item>
+<ion-item id="gold" href="#/app/events">Attend Super Bowl Events</ion-item>
+<ion-item id="silver" href="#/app/rules">Learn Football Terminology</ion-item>
+<ion-item id="gold" href="#/app/teams">View Playoff Team Stats</ion-item>
+<ion-item id="silver" href="#/app/trivia">Take A Trivia Time-Out</ion-item>
+<ion-item id="gold" href="#/app/chat">Chat With Other Fans</ion-item>
+
+
 </ion-list>
 </ion-content>
 </ion-view>

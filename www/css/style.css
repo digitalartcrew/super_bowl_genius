@@ -12,16 +12,52 @@
 .background {
     background: black;
 }
+
+.bar .title {
+  text-overflow: none;
+  }
+  
 /*seems to work fine for up to 100 characters*/
 .card.front {
-    width: 90%;
-    min-height: 50%;
+    /*-webkit-transform: rotatex(-180deg);*/
+    width: 95%;
+    height: 50%;
+    text-align: center;
+    position: relative;
+    background: -webkit-linear-gradient(#c3922d, #f9ecc5, #c3922d);
+    margin: 10px 10px 10px 10px;
+    padding-top: 5%;
+    padding-right: 2px;
+    padding-bottom: 10%;
+    padding-left: 2px;
+    line-height: 2;
+    font-size: 30px;
+    font-style: bold;
+    color: black;
+    text-shadow: 
+               0 1px 0 #D4AE5D,
+               0 2px 0 #e0c37f,
+               0 3px 0 #e0c37f,
+               0 4px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+
+.card.back {
+    width: 95%;
+    height: 50%;
     text-align: center;
     position: relative;
     background: -webkit-linear-gradient(#7b7b7d, #D8D9DA, #7b7b7d);
     margin: 10px 10px 10px 10px;
     padding-top: 5%;
+    padding-right: 2px;
     padding-bottom: 10%;
+    padding-left: 2px;
     line-height: 2;
     font-size: 40px;
     overflow-y: auto;
@@ -40,37 +76,18 @@
                0 10px 10px rgba(0,0,0,.2),
                0 20px 20px rgba(0,0,0,.15);
 }
-.card.back {
-    /*-webkit-transform: rotatex(-180deg);*/
-    width: 90%;
-    height: 50%;
-    text-align: center;
-    position: relative;
-    background: -webkit-linear-gradient(#c3922d, #f9ecc5, #c3922d);
-    margin: 10px 10px 10px 10px;
-    padding-top: 5%;
-    padding-bottom: 10%;
-    line-height: 2;
-    font-size: 46px;
-    font-style: bold;
-    color: black;
-    text-shadow: 
-               0 1px 0 #D4AE5D,
-               0 2px 0 #e0c37f,
-               0 3px 0 #e0c37f,
-               0 4px 1px rgba(0,0,0,.1),
-               0 0 5px rgba(0,0,0,.1),
-               0 1px 3px rgba(0,0,0,.3),
-               0 3px 5px rgba(0,0,0,.2),
-               0 5px 10px rgba(0,0,0,.25),
-               0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);
+
+#gold {
+  background: #d4ae5d !important;
+}
+
+#silver {
+  background: #8e8e96 !important;
 }
 #map {
         height: 100%;
       }
-    </style>
-    <style>
+
       table {
         font-size: 12px;
       }

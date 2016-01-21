@@ -4008,7 +4008,8 @@ a.subdued {
     min-width: 30px;
     height: 43px;
     text-align: center;
-    text-overflow: ellipsis;
+    text-overflow: none;
+    /*text-overflow: ellipsis;*/
     white-space: nowrap;
     font-size: 17px;
     font-weight: 500;
