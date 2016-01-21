@@ -183,7 +183,7 @@ angular.module('starter.controllers',[])
   {question: "Who is the only left-handed quarterback in the Pro Football Hall of Fame?", answer: "Steve Young", category: "Players"}
   ];
 
-  
+  $scope.showAnswer = false;
 })
 
 .controller('TeamsCtrl', function($scope,$stateParams,$http,superbowlService) {
